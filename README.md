@@ -1,5 +1,5 @@
 # Laravel EasyNav: Easy Navigation Tools for Laravel forked from DevMarketer's LaravelEasyNav.
-All credit for this amazing package goes to DevMarketer (https://github.com/DevMarketer/LaravelEasyNav). I just modified / updated a small part of the code for to make life much more easire. Most of the contents of this readme are also cloned from his repo. "I", "me", "myself" etc. in this documentation where ever mentioned hereafter refers to DevMarketer, the original author of this package.
+All credit for this amazing package goes to DevMarketer (https://github.com/DevMarketer/LaravelEasyNav). I just modified / updated a small part of the code to make life much more easier for myself & other developers like me out there. Most of the contents of this readme are also cloned from his repo. "I", "me", "myself" etc. in this documentation where ever mentioned hereafter refers to DevMarketer, the original author of this package.
 
 Every time I build another Laravel app, I find myself re-using the same custom Navigation helpers I have been perfecting over the years. These tools allow you to accurately and concisely change the class on navigation elements depending on the current page. Tools like these allow you to have your navigation manage itself, speeding up the development progress, but with the efficiency for long term production use.
 
