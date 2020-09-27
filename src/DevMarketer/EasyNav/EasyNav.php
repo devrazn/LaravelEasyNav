@@ -79,18 +79,30 @@ class EasyNav
 		$this->hasSegment($slugs, $segments, $active);
 	}
 
-	/**
+    /**
  	 * Receives a named route and returns true or false depending
 	 *  if the current URL is equal to the named route provided.
 	 *
-	 * @param 	string				$route
+	 * @param 	string|array	$routes
 	 * @param 	string|NULL		$active
 	 * @return	string
 	 */
-	public function isRoute($route, $active = NULL)
+	public function isRoute($routes, $active = NULL)
 	{
-		$this->setActive($active);
-		return ($this->request->routeIs($route) ? $this->active : '');
+        $this->setActive($active);
+        if(!is_array($routes))
+        {
+            $routes = explode('|', $routes);
+        }
+
+        foreach($routes as $route)
+        {
+            if($this->request->routeIs($route))
+            {
+                return $this->active;
+            }
+        }
+        return '';
 	}
 
 	/**

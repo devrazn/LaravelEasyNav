@@ -1,5 +1,5 @@
-# Laravel EasyNav: Easy Navigation Tools for Laravel
-
+# Laravel EasyNav: Easy Navigation Tools for Laravel forked from DevMarketer's LaravelEasyNav.
+All credit for this amazing package goes to DevMarketer (https://github.com/DevMarketer/LaravelEasyNav)
 Every time I build another Laravel app, I find myself re-using the same custom Navigation helpers I have been perfecting over the years. These tools allow you to accurately and concisely change the class on navigation elements depending on the current page. Tools like these allow you to have your navigation manage itself, speeding up the development progress, but with the efficiency for long term production use.
 
 ## Installation
@@ -90,18 +90,19 @@ Now that you see how this works in practice, lets take a look at each _rule_ ind
 
 ---
 
-### isRoute() - Matches Named Routes
+### isRoute() - Matches Named Routes (customized functionality)
 
-This rule will mark an element as active if the current page matches a specified named route.
+This rule will mark an element as active if the current page matches a specified named route(s) passed as '|' separated string or as an array.
 
 ```
-Nav::isRoute($routeName, $activeClass = "active")
+Nav::isRoute($routeName='', $activeClass = "active")
+Nav::isRoute($routeNames=[], $activeClass = "active")
 ```
 
 **Parameters:**
 
-- `$routeName` - REQUIRED String  
-	This is the named route you wish to match. It must match the values registered in the "name" column when you run `php artisan route:list`
+- `$routeName` - REQUIRED String or Array
+	This is or these are the named route you wish to match. It must match the values registered in the "name" column when you run `php artisan route:list`
 - `$activeClass` - OPTIONAL String  
 	This defaults to the value defined under `default_class` in your config file or `"active"` if no config is generated
 
@@ -117,12 +118,16 @@ Routes File:
 
 {{ Nav::isRoute('contact') }} 						// returns "active" [1]
 {{ Nav::isRoute('contact', 'is-open') }}	// returns "is-open" [2]
-{{ Nav::isRoute('about') }}								// returns "" [3]
+{{ Nav::isRoute('contact|home', 'is-open') }}	// returns "is-open" [3]
+{{ Nav::isRoute(['home', 'about'], 'is-open') }}	// returns "" [4]
+{{ Nav::isRoute('about') }}								// returns "" [5]
 ```
 
 (1) string "contact" matches the named route which is also "contact", so returns default active class  
 (2) "contact" matches the named route we are currently on, so returns the active class provided in the second parameter, "is-open"
-(3) "about" does not match the current route we are on, which is "contact", so it returns ""
+(3) "contact" matches the current route we are on, so it returns ""
+(4) none of "home" or "about" does not match the current route we are on, which is "contact", so it returns ""
+(5) "about" does not match the current route we are on, which is "contact", so it returns ""
 
 ---
 
