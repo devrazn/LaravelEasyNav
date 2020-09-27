@@ -11,7 +11,7 @@ Installation is straightforward, setup is similar to every other Laravel Package
 Begin by pulling in the package through Composer:
 
 ```
-composer require devmarketer/easynav
+composer require devrazn/easynav
 ```
 
 #### 2. Define the Service Provider and alias
