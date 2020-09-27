@@ -95,7 +95,7 @@ Now that you see how this works in practice, lets take a look at each _rule_ ind
 This rule will mark an element as active if the current page matches a specified named route(s) passed as '|' separated string or as an array.
 
 ```
-Nav::isRoute($routeName='', $activeClass = "active")
+Nav::isRoute($routeNames='', $activeClass = "active")
 Nav::isRoute($routeNames=[], $activeClass = "active")
 ```
 
