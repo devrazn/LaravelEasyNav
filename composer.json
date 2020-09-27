@@ -1,16 +1,16 @@
 {
-    "name": "rajanpkr/easynav",
+    "name": "devrazn/easynav",
     "description": "Making managing navigation in Laravel easy.",
     "keywords": ["nav", "easy", "laravel", "easynav", "helpers", "active"],
     "license": "MIT",
-    "homepage": "https://github.com/rajanpkr/LaravelEasyNav",
+    "homepage": "https://github.com/devrazn/LaravelEasyNav",
     "support": {
-        "issues": "https://github.com/rajanpkr/LaravelEasyNav/issues",
-        "source": "https://github.com/rajanpkr/LaravelEasyNav"
+        "issues": "https://github.com/DevMarketer/LaravelEasyNav/issues",
+        "source": "https://github.com/devrazn/LaravelEasyNav"
     },
     "authors": [
         {
-            "name": "Original: J. Alexander Curtis updated; Updated By: Rajan Acharya",
+            "name": "Original: J. Alexander Curtis; Forked: Rajan Acharya",
             "email": "acharya.rajanpkr@gmail.com"
         }
     ],
